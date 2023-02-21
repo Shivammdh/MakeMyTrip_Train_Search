@@ -11,7 +11,13 @@ import unittest
 
 class TestMakeMyTrip(unittest.TestCase):
     def setUp(self) -> None:
-        self.driver=webdriver.Chrome()
+        options1 = webdriver.ChromeOptions()
+        options1.add_argument("disable-infobars")
+        options1.add_argument("--disable-extensions")
+        options1.add_argument('--headless')
+        options1.add_argument('--no-sandbox')
+
+        self.driver=webdriver.Chrome(options=options1)
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
         self.driver.get("https://railways.makemytrip.com/railways/listing?classCode=&className=All%20Classes&date=20230220&destCity=Satna&destStn=STA&srcCity=Bhopal&srcStn=BPL&trainNumber=")
