@@ -14,8 +14,10 @@ class TestMakeMyTrip(unittest.TestCase):
         options1 = webdriver.ChromeOptions()
         options1.add_argument("disable-infobars")
         options1.add_argument("--disable-extensions")
-        #options1.add_argument('--headless')
         options1.add_argument('--no-sandbox')
+        options1.add_experimental_option("useAutomationExtension", False)
+        options1.add_argument("user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36")
+        options1.add_argument('--headless')
 
         self.driver=webdriver.Chrome(options=options1)
         self.driver.implicitly_wait(10)
