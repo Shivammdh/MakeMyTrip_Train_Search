@@ -6,13 +6,13 @@ from threading import Thread
 class Hub(Thread):
     def run(self) -> None:
         os.chdir('D:\Selenium')
-        os.system('java -jar selenium-server-4.7.2.jar hub')
+        os.system('java -jar selenium-server-4.8.1.jar hub')
 
 
 class Node(Thread):
     def run(self) -> None:
         os.chdir('D:\Selenium')
-        os.system('java -jar selenium-server-4.7.2.jar node')
+        os.system('java -jar selenium-server-4.8.1.jar node')
 
 class RunCode(Thread):
     def run(self) -> None:
